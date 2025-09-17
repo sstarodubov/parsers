@@ -38,11 +38,11 @@ class XmlParserTest {
                 """);
        var obj = val.asObject();
        assertEquals("root", obj.name());
-       var list = obj.getObject("a").asObject().children();
+       var list = obj.getObject("a").children();
        assertEquals(2, list.size());
        assertEquals(1, list.get(0).asNumber().value());
        assertEquals(2, list.get(1).asNumber().value());
-       assertEquals(4, obj.getObject("c").asObject().getObject("a").getNumber().value());
+       assertEquals(4, obj.getObject("c").getObject("a").getNumber().value());
     }
 
     @Test
